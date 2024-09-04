@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('salary-form');
     const result = document.getElementById('net-salary');
+    const weeklyIncome = document.getElementById('weekly-income');
+    const fortnightlyIncome = document.getElementById('fortnightly-income');
+    const monthlyIncome = document.getElementById('monthly-income');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -10,11 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const grossSalary = parseFloat(document.getElementById('gross-salary').value);
         if (isNaN(grossSalary) || grossSalary <= 0) {
             result.textContent = 'Please enter a valid salary.';
+            weeklyIncome.textContent = '';
+            fortnightlyIncome.textContent = '';
+            monthlyIncome.textContent = '';
             return;
         }
 
         const netSalary = calculateNetSalary(grossSalary);
         result.textContent = `Your net annual salary is $${netSalary.toFixed(2)}.`;
+        
+        // Calculate net income for different payment periods
+        const weekly = netSalary / 52;
+        const fortnightly = netSalary / 26;
+        const monthly = netSalary / 12;
+
+        weeklyIncome.textContent = `Net weekly income: $${weekly.toFixed(2)}`;
+        fortnightlyIncome.textContent = `Net fortnightly income: $${fortnightly.toFixed(2)}`;
+        monthlyIncome.textContent = `Net monthly income: $${monthly.toFixed(2)}`;
     });
 
     function calculateNetSalary(gross) {
