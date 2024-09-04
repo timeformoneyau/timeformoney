@@ -1,39 +1,66 @@
-/* Reset some default browser styles */
-body, h1, h2, h3, p, ul, li {
+/* Modern Financial Website Styles */
+
+:root {
+    --primary-color: #004d00;
+    --secondary-color: #00b300;
+    --text-color: #ffffff;
+    --background-color: #000000;
+    --box-background: rgba(0, 77, 0, 0.2);
+}
+
+body, html {
     margin: 0;
     padding: 0;
-}
-
-/* General styles */
-body {
     font-family: 'Arial', sans-serif;
-    color: white;
-    line-height: 1.6;
-    background-color: black; /* Black background */
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-/* Header */
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, #000000, #004d00);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #004d00; /* Dark green background */
-    color: white;
-    text-align: center; /* Center header text */
+    padding: 20px 0;
 }
 
-.logo-placeholder img {
-    height: 40px; /* Adjust size as needed */
-    width: auto;
+.logo {
+    max-width: 100px;
+    height: auto;
 }
 
-/* Center align the header navigation */
 nav ul {
-    list-style: none;
+    list-style-type: none;
     display: flex;
-    justify-content: center; /* Center align navigation links */
-    padding: 0;
 }
 
 nav ul li {
@@ -41,126 +68,91 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Background Image */
-.background-image {
-    background-image: url('https://github.com/timeformoneyau/timeformoney/blob/main/52u3_XoVTDicx3SAzpCMXw.webp?raw=true');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.hero {
     text-align: center;
-    color: white;
+    padding: 50px 0;
 }
 
-.background-image .content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.background-image h1 {
-    font-size: 48px;
+.hero h1 {
+    font-size: 2.5em;
     margin-bottom: 20px;
 }
 
-.background-image p {
-    font-size: 24px;
-    margin-bottom: 20px;
+.hero-image {
+    max-width: 200px;
+    height: auto;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f8b400;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
+.about {
+    text-align: center;
+    padding: 50px 0;
 }
 
-/* About Section */
-#about {
-    padding: 60px 20px;
-    text-align: center; /* Center align About section text */
+.calculators {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-#about h2 {
-    margin-bottom: 40px;
-    font-size: 36px;
-}
-
-#about p {
-    font-size: 18px;
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-#about img {
-    max-width: 100%;
+.calculator-box {
+    flex-basis: calc(50% - 20px);
+    background-color: var(--box-background);
     border-radius: 10px;
-}
-
-/* Removed Contact Section */
-
-/* Footer */
-footer {
-    background-color: #002b5c; /* Darker blue for footer */
-    color: white;
-    text-align: center; /* Center align footer text */
     padding: 20px;
-}
-
-/* Calculator Styles */
-.calculator-container {
-    text-align: center;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #333; /* Dark background for calculator */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    width: 80%; /* Adjust as needed */
-    max-width: 600px; /* Maximum width */
-}
-
-.calculator-container h2 {
-    color: white;
     margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.calculator-container input[type="number"], 
-.calculator-container input[type="submit"] {
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, button {
+    margin: 10px 0;
     padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.calculator-container input[type="submit"] {
-    background-color: #f8b400;
-    color: white;
     border: none;
+    border-radius: 5px;
+}
+
+input {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.calculator-container input[type="submit"]:hover {
-    background-color: #e0a800;
+button:hover {
+    background-color: var(--primary-color);
 }
 
-.calculator-results {
-    margin-top: 20px;
-    color: white;
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--primary-color);
 }
 
-.calculator-results p {
-    font-size: 18px;
-}
-
-.calculator-results .disclaimer {
-    font-size: 14px;
-    margin-top: 10px;
+@media (max-width: 768px) {
+    .calculators {
+        flex-direction: column;
+    }
+    
+    .calculator-box {
+        flex-basis: 100%;
+    }
 }
