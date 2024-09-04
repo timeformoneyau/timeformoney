@@ -1,30 +1,116 @@
-#contact form {
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    line-height: 1.6;
+    background-color: black; /* Black background */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #004d00; /* Dark green background */
+    color: white;
+    text-align: center; /* Center header text */
+}
+
+.logo-placeholder img {
+    height: 40px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* Center align the header navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center align navigation links */
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Background Image */
+.background-image {
+    background-image: url('https://github.com/timeformoneyau/timeformoney/blob/main/52u3_XoVTDicx3SAzpCMXw.webp?raw=true');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.background-image .content {
     max-width: 600px;
     margin: 0 auto;
 }
 
-#contact input, #contact textarea {
-    width: 100%;
-    padding: 10px;
+.background-image h1 {
+    font-size: 48px;
     margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
 }
 
-#contact button {
+.background-image p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
     padding: 10px 20px;
     background-color: #f8b400;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
     font-size: 18px;
 }
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    text-align: center; /* Center align About section text */
+}
+
+#about h2 {
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+#about p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#about img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Removed Contact Section */
 
 /* Footer */
 footer {
     background-color: #002b5c; /* Darker blue for footer */
     color: white;
-    text-align: center;
+    text-align: center; /* Center align footer text */
     padding: 20px;
 }
 
