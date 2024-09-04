@@ -7,9 +7,8 @@ body, h1, h2, h3, p, ul, li {
 /* General styles */
 body {
     font-family: 'Arial', sans-serif;
-    color: white; /* Change text color to white for visibility */
+    color: #333;
     line-height: 1.6;
-    background-color: black; /* Set the background color to black */
 }
 
 /* Header */
@@ -18,7 +17,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #004080; /* Change this if needed for better contrast */
+    background-color: #004d00; /* Dark Green */
     color: white;
 }
 
@@ -49,7 +48,7 @@ nav ul li a {
     background-position: center;
     padding: 100px 20px;
     text-align: center;
-    color: white; /* Ensure text is visible against background image */
+    color: white;
 }
 
 .background-image .content {
@@ -67,55 +66,42 @@ nav ul li a {
     margin-bottom: 20px;
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #f8b400;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-/* Services Section */
-#services {
+/* Salary Calculator Section */
+#salary-calculator {
     padding: 60px 20px;
-    background-color: #333; /* Dark background for better contrast */
     text-align: center;
 }
 
-#services h2 {
+#salary-calculator h2 {
     margin-bottom: 40px;
     font-size: 36px;
 }
 
-.service-cards {
-    display: flex;
-    justify-content: space-around;
+#salary-calculator form {
+    display: inline-block;
 }
 
-.service-cards .card {
-    background-color: #444; /* Dark background for cards */
-    border: 1px solid #555; /* Darker border */
-    border-radius: 5px;
-    width: 30%;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Slightly more prominent shadow */
-}
-
-.service-cards .card img {
-    max-width: 100%;
-    border-bottom: 1px solid #555;
-    margin-bottom: 20px;
-}
-
-.service-cards .card h3 {
-    font-size: 24px;
+#salary-calculator label {
+    display: block;
     margin-bottom: 10px;
 }
 
-.service-cards .card p {
-    font-size: 16px;
+#salary-calculator input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#salary-calculator button {
+    padding: 10px 20px;
+    background-color: #004d00; /* Dark Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 /* About Section */
@@ -144,7 +130,7 @@ nav ul li a {
 /* Contact Section */
 #contact {
     padding: 60px 20px;
-    background-color: #004080;
+    background-color: #004d00; /* Dark Green */
     color: white;
     text-align: center;
 }
@@ -165,8 +151,6 @@ nav ul li a {
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    background-color: #333; /* Dark background for form inputs */
-    color: white;
 }
 
 #contact button {
@@ -180,7 +164,7 @@ nav ul li a {
 
 /* Footer */
 footer {
-    background-color: #002b5c; /* Dark blue background */
+    background-color: #002b5c; /* Darker Blue */
     color: white;
     text-align: center;
     padding: 20px;
