@@ -4,106 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time for Money</title>
-    <style>
-        body {
-            text-align: center;
-            background-color: black;
-            color: white;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        header, footer {
-            background-color: #004d00; /* Darker, money-themed green */
-            padding: 20px 0;
-        }
-        header img {
-            max-width: 100px; /* Very small logo in header */
-            height: auto;
-        }
-        nav ul {
-            padding: 0;
-            list-style-type: none;
-        }
-        nav ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .content img {
-            display: block;
-            margin: 20px auto;
-            max-width: 9%; /* 15% of 60% is 9% */
-            height: auto;
-        }
-        form {
-            display: inline-block;
-            text-align: left;
-        }
-        input, button {
-            display: block;
-            margin: 10px 0;
-            padding: 5px;
-        }
-        #result p {
-            margin: 5px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <img src="https://raw.githubusercontent.com/timeformoneyau/timeformoney/main/tfmlogo.jpg.webp" alt="Time for Money Logo">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Home Section -->
-    <section id="home">
-        <div class="content">
+    <div class="background-animation"></div>
+    <div class="content-wrapper">
+        <!-- Header Section -->
+        <header>
+            <img src="https://raw.githubusercontent.com/timeformoneyau/timeformoney/main/tfmlogo.jpg.webp" alt="Time for Money Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#calculators">Calculators</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Home Section -->
+        <section id="home" class="hero">
             <h1>You sell your time for money.</h1>
-            <img src="https://raw.githubusercontent.com/timeformoneyau/timeformoney/main/tfmlogo.jpg.webp" alt="Time for Money Image">
-        </div>
-    </section>
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>We exist to remind you the true nature of your relationship with your employer.</p>
-    </section>
-    <!-- Calculator Section -->
-    <section id="salary-calculator">
-        <h2>Calculate Your Net Annual Salary</h2>
-        <form id="salary-form">
-            <label for="gross-salary">Gross Annual Salary:</label>
-            <input type="number" id="gross-salary" name="gross-salary" placeholder="Enter your gross salary" required>
-            <button type="submit">Calculate</button>
-        </form>
-        <div id="result">
-            <p id="net-salary"></p>
-            <p id="weekly-income"></p>
-            <p id="fortnightly-income"></p>
-            <p id="monthly-income"></p>
-            <p id="disclaimer">(The above does not include the Medicare levy, paid at the end of each financial year when you file your taxes.)</p>
-        </div>
-    </section>
-    <!-- Pay Raise Calculator Section -->
-    <section id="pay-raise-calculator">
-        <h2>What % Pay Raise Did You Get This Year?</h2>
-        <form id="pay-raise-form">
-            <label for="pay-raise">Enter your % pay raise:</label>
-            <input type="number" id="pay-raise" name="pay-raise" placeholder="Enter percentage" required>
-            <button type="submit">How Did I Go?</button>
-        </form>
-        <div id="pay-raise-result">
-            <p id="pay-raise-feedback"></p>
-        </div>
-    </section>
+            <img src="https://raw.githubusercontent.com/timeformoneyau/timeformoney/main/tfmlogo.jpg.webp" alt="Time for Money Image" class="hero-image">
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>We exist to remind you the true nature of your relationship with your employer.</p>
+        </section>
+        
+        <!-- Calculators Section -->
+        <section id="calculators" class="calculators">
+            <div class="calculator-box">
+                <h2>Calculate Your Net Annual Salary</h2>
+                <form id="salary-form">
+                    <label for="gross-salary">Gross Annual Salary:</label>
+                    <input type="number" id="gross-salary" name="gross-salary" placeholder="Enter your gross salary" required>
+                    <button type="submit">Calculate</button>
+                </form>
+                <div id="result">
+                    <p id="net-salary"></p>
+                    <p id="weekly-income"></p>
+                    <p id="fortnightly-income"></p>
+                    <p id="monthly-income"></p>
+                    <p id="disclaimer">(The above does not include the Medicare levy, paid at the end of each financial year when you file your taxes.)</p>
+                </div>
+            </div>
+            
+            <div class="calculator-box">
+                <h2>What % Pay Raise Did You Get This Year?</h2>
+                <form id="pay-raise-form">
+                    <label for="pay-raise">Enter your % pay raise:</label>
+                    <input type="number" id="pay-raise" name="pay-raise" placeholder="Enter percentage" required>
+                    <button type="submit">How Did I Go?</button>
+                </form>
+                <div id="pay-raise-result">
+                    <p id="pay-raise-feedback"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
     <!-- Footer -->
     <footer>
         <p>Created by TimeForMoney</p>
