@@ -1,58 +1,38 @@
-// script.js
+document.getElementById('salary-form').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('salary-form');
-    const result = document.getElementById('net-salary');
-    const weeklyIncome = document.getElementById('weekly-income');
-    const fortnightlyIncome = document.getElementById('fortnightly-income');
-    const monthlyIncome = document.getElementById('monthly-income');
-
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-
-        const grossSalary = parseFloat(document.getElementById('gross-salary').value);
-        if (isNaN(grossSalary) || grossSalary <= 0) {
-            result.textContent = 'Please enter a valid salary.';
-            weeklyIncome.textContent = '';
-            fortnightlyIncome.textContent = '';
-            monthlyIncome.textContent = '';
-            return;
-        }
-
-        const netSalary = calculateNetSalary(grossSalary);
-        result.textContent = `Your net annual salary is $${netSalary.toFixed(2)}.`;
-        
-        // Calculate net income for different payment periods
-        const weekly = netSalary / 52;
-        const fortnightly = netSalary / 26;
-        const monthly = netSalary / 12;
-
-        weeklyIncome.textContent = `Net weekly income: $${weekly.toFixed(2)}`;
-        fortnightlyIncome.textContent = `Net fortnightly income: $${fortnightly.toFixed(2)}`;
-        monthlyIncome.textContent = `Net monthly income: $${monthly.toFixed(2)}`;
-    });
-
-    function calculateNetSalary(gross) {
-        // Australian tax rates for FY2024/2025
-        let tax = 0;
-        let taxableIncome = gross;
-
-        if (taxableIncome <= 18200) {
-            tax = 0;
-        } else if (taxableIncome <= 45000) {
-            tax = (taxableIncome - 18200) * 0.19;
-        } else if (taxableIncome <= 120000) {
-            tax = (taxableIncome - 45000) * 0.325 + 5092;
-        } else if (taxableIncome <= 180000) {
-            tax = (taxableIncome - 120000) * 0.37 + 29467;
-        } else {
-            tax = (taxableIncome - 180000) * 0.45 + 51667;
-        }
-
-        // Medicare levy (2% of taxable income)
-        const medicareLevy = gross * 0.02;
-
-        // Net salary calculation
-        return gross - tax - medicareLevy;
+    // Get the gross salary from the input field
+    const grossSalary = parseFloat(document.getElementById('gross-salary').value);
+    
+    if (isNaN(grossSalary) || grossSalary <= 0) {
+        alert('Please enter a valid gross salary.');
+        return;
     }
+
+    // Calculate net annual salary based on current Australian tax rates (2024/2025)
+    let netSalary = grossSalary;
+    
+    // Example tax calculations (update with actual rates as necessary)
+    if (grossSalary <= 18200) {
+        netSalary = grossSalary; // No tax
+    } else if (grossSalary <= 45000) {
+        netSalary = grossSalary - (grossSalary - 18200) * 0.19;
+    } else if (grossSalary <= 120000) {
+        netSalary = grossSalary - 5092 - (grossSalary - 45000) * 0.325;
+    } else if (grossSalary <= 180000) {
+        netSalary = grossSalary - 29467 - (grossSalary - 120000) * 0.37;
+    } else {
+        netSalary = grossSalary - 51667 - (grossSalary - 180000) * 0.45;
+    }
+
+    // Calculate periodic incomes
+    const weeklyIncome = netSalary / 52;
+    const fortnightlyIncome = netSalary / 26;
+    const monthlyIncome = netSalary / 12;
+
+    // Display results
+    document.getElementById('net-salary').textContent = `Net Annual Salary: $${netSalary.toFixed(2)}`;
+    document.getElementById('weekly-income').textContent = `Weekly Income: $${weeklyIncome.toFixed(2)}`;
+    document.getElementById('fortnightly-income').textContent = `Fortnightly Income: $${fortnightlyIncome.toFixed(2)}`;
+    document.getElementById('monthly-income').textContent = `Monthly Income: $${monthlyIncome.toFixed(2)}`;
 });
