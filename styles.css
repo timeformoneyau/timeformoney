@@ -1,9 +1,19 @@
 /* General styles */
 body {
     font-family: 'Arial', sans-serif;
-    color: #333; /* Text color */
+    color: #fff; /* Text color to white */
     line-height: 1.6;
     background-color: #000; /* Main background color */
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #004080; /* Dark green */
+    color: white;
 }
 
 /* Background Image */
@@ -17,23 +27,6 @@ body {
     background-color: #000; /* Ensures background color is black */
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #004080; /* Update this to a dark green */
-    color: white;
-}
-
-/* Services Section */
-#services {
-    padding: 60px 20px;
-    background-color: #f9f9f9; /* Update this if needed to match theme */
-    text-align: center;
-}
-
 /* About Section */
 #about {
     padding: 60px 20px;
@@ -44,14 +37,34 @@ header {
 /* Contact Section */
 #contact {
     padding: 60px 20px;
-    background-color: #004080; /* Update this to a dark green */
+    background-color: #004080; /* Dark green */
     color: white;
 }
 
 /* Footer */
 footer {
-    background-color: #002b5c; /* Update this to a dark green */
+    background-color: #002b5c; /* Dark green */
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+/* Calculator */
+#salary-calculator {
+    text-align: center;
+    color: #fff; /* Text color to white */
+}
+
+#salary-calculator img {
+    max-width: 100%;
+    height: auto; /* Ensure the image maintains its aspect ratio */
+}
+
+#salary-form {
+    margin: 0 auto;
+    max-width: 600px; /* Restrict form width to ensure centered layout */
+}
+
+#result p {
+    color: #fff; /* Ensure text color in results is white */
 }
